@@ -196,8 +196,8 @@ Mode 02 is red and focused on combat orders and deployables.
 
 - `Left` -- Toggle Drone Deployment
 - `Up` -- Wingman attack target
-- `Right` -- Deploy Laser Tower
-- `Down` -- Disable turrets
+- `Right` -- Disable Turrets
+- `Down` -- Deploy Laser Tower
 
 I've never really played with mines so that's why I don't have it mapped.  Although now that I've got a lot more button options I may revisit this.
 
