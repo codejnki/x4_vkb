@@ -154,6 +154,7 @@ The left hand `A4 Hat` directions perform the following targeting options.
 - `Down` -- Target nearest enemy
 - `Left` -- Engage Autopilot
 - `Right` -- Set Guidance
+- `Press` -- Deselect Target
 
 Note: In the Omni Throttle configuration `Left` is in more of an `Up` direction.  
 
@@ -179,7 +180,10 @@ I decided to use the right hand `A3 Hat` for 3 separate modes focused around dep
 
 To help you I've configured each mode to display a different color.  Mode 00 is blue, 01 is green, and 02 is red.
 
-Mode 00 I have not configured anything yet.  I expect this will happen soon so watch for an update.
+Mode 00 General
+
+- `Left` -- Request Docking / Undocking
+- `Up` -- Get Up
 
 Mode 01 is green and focused on civilian deployables.  
 
