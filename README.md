@@ -205,4 +205,5 @@ I tend to toggle turrets a lot when I'm in M sized ships when I'm close to NPC s
 
 ## Changelog
 
+- 2024.02.09 -- Fixed some incorrect button mapping in the 3rd shift mode
 - 2024.01.28 -- Initial Release
