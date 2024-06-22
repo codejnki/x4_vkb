@@ -215,7 +215,7 @@ I tend to toggle turrets a lot when I'm in M sized ships when I'm close to NPC s
 ## Changelog
 
 - 2024.06.22 -- 7.0 Update Compatibility
-  - Rebuilt entire input map from new Egosoft VKB defaults
+  - Rebuilt the entire input map from the new Egosoft VKB defaults
   - `[VKB] [FS]` Added tempo button to `F1`
   - `[X4] [FS]` Moved main interaction button from `A2` to `C2 HAT` button press
   - `[X4] [FS]` Added Short Press `F1` external/internal camera toggle
