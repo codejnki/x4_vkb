@@ -193,19 +193,20 @@ Mode 00 General
 
 - `Left` -- Request Docking / Undocking
 - `Up` -- Get Up
+- `Down` -- Wingman resume duties
 
 Mode 01 is green and focused on civilian deployables.  
 
 - `Left` -- Navigation Beacon
 - `Up` -- Resource Probe
 - `Right` -- Satellite
-- `Down` -- Not mapped
+- `Down` -- Repeat last civilian deployment
 
 Mode 02 is red and focused on combat orders and deployables.
 
 - `Left` -- Toggle Drone Deployment
 - `Up` -- Wingman attack target
-- `Right` -- Disable Turrets
+- `Right` -- Toggle Turret Arming
 - `Down` -- Deploy Laser Tower
 
 I've never really played with mines so that's why I don't have it mapped.  Although now that I've got a lot more button options I may revisit this.
@@ -214,6 +215,12 @@ I tend to toggle turrets a lot when I'm in M sized ships when I'm close to NPC s
 
 ## Changelog
 
+- 2024.06.22 -- Eureka Update
+  - When the 7.0 beta dropped, the first person look on the right stick broke and I couldn't figure out why.  What stumped me further was that switching back to 6.2 off the beta fixed everything.  Well I finally think I figured it out, there's a conflict once I try to map the camera controls to the same `A1 hat`.  So I've moved camera control to the `A2 hat`.  It was sitting unused.  This may still be a temporary move, but at least my first person look is now working again.
+  - `[X4] [FS]` Moved Camera controls to `A4 hat`. Center click to reset camera
+  - `[X4] [F2]` Added Wingman Resume Duties to Mode 00 `Down`
+  - `[X4] [FS]` Added Repeat last civilian deployment to Mode 01 `Down`
+  - `[X4] [TS]` Added Toggle Game Speed (Slow-mo mode) to `F1`
 - 2024.06.22 -- 7.0 Update Compatibility
   - Rebuilt the entire input map from the new Egosoft VKB defaults
   - `[VKB] [FS]` Added tempo button to `F1`
