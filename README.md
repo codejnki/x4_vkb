@@ -14,6 +14,15 @@ This is built around two VKB Gladiator NTX EVO joysticks.  Both sticks use the p
 
 I do not know if you can use my config files and apply them to the opposite hands without needing to modify it first.  If you can't, see the details below on how I've configured the sticks.
 
+## Conventions
+
+Here are some of the conventions I use in this README.
+
+`[VKB]` -- References the VKB Joystick Configuration
+`[X4]` -- References the X4 input map
+`[FS]` -- Flight Stick
+`[TS]` -- Throttle Stick
+
 ## Instructions
 
 ### VKB Gladiator NTX Evo
@@ -205,5 +214,13 @@ I tend to toggle turrets a lot when I'm in M sized ships when I'm close to NPC s
 
 ## Changelog
 
+- 2024.06.22 -- 7.0 Update Compatibility
+  - Rebuilt entire input map from new Egosoft VKB defaults
+  - `[VKB] [FS]` Added tempo button to `F1`
+  - `[X4] [FS]` Moved main interaction button from `A2` to `C2 HAT` button press
+  - `[X4] [FS]` Added Short Press `F1` external/internal camera toggle
+  - `[X4] [FS]` Added Long Press `F1` target external camera (short press returns to internal view)
+  - `[X4] [TS]` Added `F3` Quicksave
+  - `[X4] [TX]` Added `SW1` Video enhancement goggles `Up` to zoom in, `Down` to zoom out
 - 2024.02.09 -- Fixed some incorrect button mapping in the 3rd shift mode
 - 2024.01.28 -- Initial Release
