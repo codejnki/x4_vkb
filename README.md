@@ -215,10 +215,14 @@ I tend to toggle turrets a lot when I'm in M sized ships when I'm close to NPC s
 
 ## Changelog
 
+- 2024.07.08
+  - `[VKB] [FS]` Fixed the `A4 hat` camera control in combat shift mode, the camera now works during "pew pew" time.
+  - `[X4]` Removed `R` and `side mouse` bindings to secondary fire
+  - `[X4] [FS]` Added aim assist toggle, I do not remember why I did this...but it is apparently there in the diff ¯\_(ツ)_/¯
 - 2024.06.22 -- Eureka Update
   - When the 7.0 beta dropped, the first person look on the right stick broke and I couldn't figure out why.  What stumped me further was that switching back to 6.2 off the beta fixed everything.  Well I finally think I figured it out, there's a conflict once I try to map the camera controls to the same `A1 hat`.  So I've moved camera control to the `A2 hat`.  It was sitting unused.  This may still be a temporary move, but at least my first person look is now working again.
   - `[X4] [FS]` Moved Camera controls to `A4 hat`. Center click to reset camera
-  - `[X4] [F2]` Added Wingman Resume Duties to Mode 00 `Down`
+  - `[X4] [FS]` Added Wingman Resume Duties to Mode 00 `Down`
   - `[X4] [FS]` Added Repeat last civilian deployment to Mode 01 `Down`
   - `[X4] [TS]` Added Toggle Game Speed (Slow-mo mode) to `F1`
 - 2024.06.22 -- 7.0 Update Compatibility
@@ -228,6 +232,6 @@ I tend to toggle turrets a lot when I'm in M sized ships when I'm close to NPC s
   - `[X4] [FS]` Added Short Press `F1` external/internal camera toggle
   - `[X4] [FS]` Added Long Press `F1` target external camera (short press returns to internal view)
   - `[X4] [TS]` Added `F3` Quicksave
-  - `[X4] [TX]` Added `SW1` Video enhancement goggles `Up` to zoom in, `Down` to zoom out
+  - `[X4] [TS]` Added `SW1` Video enhancement goggles `Up` to zoom in, `Down` to zoom out
 - 2024.02.09 -- Fixed some incorrect button mapping in the 3rd shift mode
 - 2024.01.28 -- Initial Release
