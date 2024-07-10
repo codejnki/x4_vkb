@@ -207,14 +207,19 @@ Mode 02 is red and focused on combat orders and deployables.
 - `Left` -- Toggle Drone Deployment
 - `Up` -- Wingman attack target
 - `Right` -- Toggle Turret Arming
-- `Down` -- Deploy Laser Tower
+- `Down` `Short` -- Deploy Laser Tower
+- `Down` `Long` -- Deploy Mine
 
-I've never really played with mines so that's why I don't have it mapped.  Although now that I've got a lot more button options I may revisit this.
+`Down` is a tempo button in Mode 02.  A short press will drop a laser tower and a long press will drop a mine.
 
 I tend to toggle turrets a lot when I'm in M sized ships when I'm close to NPC stations or larger ships to help prevent splash damage and reputation loss.
 
 ## Changelog
 
+- 2024.07.09 -- And they call it a mine!
+  - `[VKB] [FS]` Added a boolean for virtual button 53 so that it is now a tempo button in Shift Mode 2 (combat)
+  - `[X4] [FS]` Added short down press in combat mode to deploy laser tower
+  - `[X4] [FS]` Added long down press in combat mode to deploy mines
 - 2024.07.08
   - `[VKB] [FS]` Fixed the `A4 hat` camera control in combat shift mode, the camera now works during "pew pew" time.
   - `[X4]` Removed `R` and `side mouse` bindings to secondary fire
