@@ -18,10 +18,10 @@ I do not know if you can use my config files and apply them to the opposite hand
 
 Here are some of the conventions I use in this README.
 
-`[VKB]` -- References the VKB Joystick Configuration 
-`[X4]` -- References the X4 input map 
-`[FS]` -- Flight Stick 
-`[TS]` -- Throttle Stick 
+- `[VKB]` -- References the VKB Joystick Configuration 
+- `[X4]` -- References the X4 input map 
+- `[FS]` -- Flight Stick 
+- `[TS]` -- Throttle Stick 
 
 ## Instructions
 
