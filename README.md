@@ -122,7 +122,7 @@ Using the `C1 Hat` directions, you should be able to successfully walk up to the
 
 #### Map
 
-I am still working on this.  Right now clicking the middle button on the right hand `C1 Hat` will open the menu.  You can then use the menu navigation Hat controls and the `A2` and `B1` to move around.  But that's about it so far.  This is not optimized at all.
+I've decided that trying to make an optimal map configuration is just not something I am interested in.  I use the mouse for the map because it is just way more natural.
 
 #### Flight
 
