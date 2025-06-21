@@ -193,7 +193,7 @@ Mode 00 General
 
 - `Left` -- Request Docking / Undocking
 - `Up` -- Get Up
-- `Down` -- Wingman resume duties
+- `Right` -- Toggle Ext. View
 
 Mode 01 is green and focused on civilian deployables.  
 
