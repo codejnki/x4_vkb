@@ -232,6 +232,8 @@ Mode 3
 
 ## Changelog
 
+- 2025.06.22
+  - __FIX__ Fixed the container magnet and camera control miss match
 - 2025.06.21 -- Updated for 7.6
   - __UPDATE__ Capture tweaks from the last year
   - __NEW__ -- VKB Diagrams
