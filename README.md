@@ -2,26 +2,15 @@
 
 ## WARNING
 
-MAKE SURE YOU HAVE BACKUPS OF YOUR VKB CONFIG FILES AND X4 INPUT MAPS BEFORE YOU USE THESE SCRIPTS.  THE AUTHOR IS NOT RESPONSIBLE IF YOUR ONE AND ONLY COPY OF A FILE IS RUINED.
+MAKE SURE YOU HAVE BACKUPS OF YOUR VKB CONFIG FILES AND X4 INPUT MAPS BEFORE YOU USE THESE SCRIPTS OR FILES.  THE AUTHOR IS NOT RESPONSIBLE IF YOUR ONE AND ONLY COPY OF A FILE IS RUINED.
 
 ## Introduction
 
 This is my personal dual stick configuration of the [VKB Gladiator NTX EVO](https://www.vkbcontrollers.com/) joysticks for [X4: Foundations by Egosoft](https://www.egosoft.com).
 
-Many of the buttons on the sticks are not yet bound to in-game functions.  This is a work-in-progress and as I get more time with the sticks I will probably move things around.  See the CHANGELOG below for more details.
-
 This is built around two VKB Gladiator NTX EVO joysticks.  Both sticks use the premium grip.  The right hand stick is in the vertical configuration and used as the main directional stick.  The left hand stick is in the Omni Throttle configuration with the Y axis spring removed.
 
-I do not know if you can use my config files and apply them to the opposite hands without needing to modify it first.  If you can't, see the details below on how I've configured the sticks.
-
-## Conventions
-
-Here are some of the conventions I use in this README.
-
-- `[VKB]` -- References the VKB Joystick Configuration 
-- `[X4]` -- References the X4 input map 
-- `[FS]` -- Flight Stick 
-- `[TS]` -- Throttle Stick 
+You should be able to apply them to the opposite hands without needing to modify it first.  If you can't, see the details below on how I've configured the sticks.
 
 ## Instructions
 
@@ -45,177 +34,208 @@ In the X4 Controls menu use the Load Profile option to load the new configuratio
 
 ![Dual Stick X4 Configuration](./img/x4_controllers.jpg)
 
-### Scripts
+## Stick Configurations
 
-There are two scripts I wrote to help me move files around.  In the `.env_template` file you will see the environment variables used in the two scripts.  If you use `dotenv`, renaming this to `.env` and filling out the `replace_me` fields should allow you to use these scripts as well
+The X4 input map and the two VKB configuration files are intended to work together.  I've used the VKB configuration software to enable features such as tempo buttons (long press & short press do different things) and Shift Modes for even more options for the physical buttons.
 
-`copy_from_local.sh` Is used to copy the VKB config and X4 Input map from my local machine folders to the source code folder.  I used this after I make changes and want to sync this to GitHub.
+### Left Hand
 
-`copy_to_local.sh` Is used this to copy the files from the source code folder into place on my local machine.  It will attempt to create a time stamp backup in your destination folder before copying the files.
+I am going to assume that your Y axis spring has been removed and you are using this as a throttle.  In dead center the LED should flash RED.  Outside of dead center it should be solid green.
 
-## Configuration
+In the VKB sick configuration I've configured the throttle curve to slow down near center so we have better fine control of the throttle at low speeds like when docking.  It should feel a little "sticky" at zero.
 
-### VKB
+!["Throttle Curve Diagram"](img/VKB_axis_curve.png)
 
-#### Right Hand (Flight Control)
+Overall the left hand stick is fairly straight forward.  It focuses on target management and ship mode toggling.  I'm moving left to right as if you are viewing the left hand throttle stick.
 
-!["Flight Stick Configuration"](img/vkb_right_hand.png)
+Note: The image is a right-handed one, but the HAT configurations should match what is printed on the throttle housing.
 
-|Cell|Button|Virtual Button(s)|Function|Notes|
-|---|---|---|---|---|
-|Line 8 / Reg 2|B1|#16, #41|Tempo 2, short #16, long #41||
-|Line 6 / Reg 2|A3 Push|#14|Cycle Modes 00 -> 01 -> 02|The RGB LED switches Blue -> Green -> Red per mode|
-|Line 5 / Reg 3|A3 Down|#21, #49, #53|Modes 00 -> 01 -> 02||
-|Line 6 / Reg 3|A3 Up|#22, #50, #54|Modes 00 -> 01 -> 02||
-|Line 7 / Reg 3|A3 Left|#23, #51, #55|Modes 00 -> 01 -> 02||
-|Line 8 / Reg 3|A3 Right|#24, #52, #56|Modes 00 -> 01 -> 02||
+#### A4 HAT
 
-##### Description
+The A4 HAT focuses on basic targeting functions.  Pressing up will target objects the same way the `T` key does, so YMMV on how accurate it is.  Pressing the stick in will deselect your target.  Learn to leveraging the guidance toggle and the auto pilot toggle for quick navigation.
 
-There are two main changes on the flight stick.  
+- `Press` -- Deselects your target
+- `Up` -- Attempts to target what ever is in front of you `T` key style
+- `Down` -- Target the nearest enemy
+- `Left` -- Toggle AutoPilot
+- `Right` -- Toggle Guidance
 
-First, `B1` is a Tempo button with short and long configured as two virtual buttons.
+#### A3 HAT
 
-Second, `A3 Push` cycles through all three shift modes.  I'll go into further detail about the 3 modes in the X4 configuration section.  Shift mode 0 (default) has the led blue, Shift mode 1 will change the led to Green and is used for civilian deployables. Shift mode 2 will change the led to red and is used for combat deployables and orders.
+This center hat is all about ship mode management.  It has got the 4 main ship modes mapped one in each direction.  
 
-#### Left Hand (Throttle Control)
+Pressing in on the A3 HAT toggles flight assist.  As of the 7.5 Flight Model update I do not use flight assist nearly as much as I used to, but it is here for quick easy access for sick moves.
 
-!["Throttle Stick Configuration"](img/vkb_left_hand.png)
+- `Press` -- Toggle Flight Assist
+- `Up` -- Short Range Scan
+- `Down` -- Long Range Scan
+- `Right` -- SETA
 
-|Cell|Button|Virtual Button(s)|Function|Notes|
-|---|---|---|---|---|
-|Line 4 / Reg 2|A2|#12, #41|Tempo 2, short #12, long #41||
+#### A1 HAT
 
-Additionally the RGB LED is configured to flash red when the Y axis is in the center and solid green when it is not.  This has the effect that when your ship throttle is set to 0 you see a flashing red light and solid green while in motion.  I'm able to see the flashing in my peripheral vision so I've found this to be a useful indicator.
+This HAT is focused on advanced targeting options and walking.  Press the stick down to toggle walking mode on and off.  The small circular led will light up red when in walking mode.  The stick should then act like any controller stick in a FPS game.
 
-### X4: Foundations InputMap
+- `Press` -- Toggle walking mode
+- `Up` -- Next Target
+- `Down` -- Previous Target
+- `Left` -- Next Ship Component
+- `Right` -- Previous Ship Component
 
-My overall philosophy was to try and find a control scheme that allowed for great flight controls and made first person movement a breeze from the sticks.  On top of that, I've tried to group buttons and functions together as logically as I can.  I leverage Shift Modes to achieve some of these grouping.  I've tried to put my most common controls in locations for the easiest access.
+#### A2 Button
 
-On the left hand stick `D1` (pinkie) is mapped to Pause.  The fact that X4 allows you to pause at any time and issue orders via the map, makes this placement very convenient for very regular use.  
+`Short press` this button to stop engines.
 
-If you aren't pausing your game in the middle of a dogfight because you suddenly had a great idea for a good station to build, then are you REALLY an X4: Foundations player? 🤣
+`Long press` and hold this button to engage engine boost.
 
-#### General UI
+#### B1 Button
 
-These will get repeated below, but I'm going to call them out here as well.
+Match your target's speed.  Don't forget that this also works while in travel drive!
 
-On the right hand stick the `A2` is your primary interact/action/left-mouse-click button.
+#### C1 HAT
 
-On the right hand stick the `B1` is use to back out of your current menu.
+Currently un-used
 
-The `C1 Hat` directions are used to navigate around menus.  Combine this with `A2` and you should be flying through the UI in no-time.
+#### Rapid Fire Switch
 
-#### First Person Movement And Interactions
+- `Up` -- This will cycle through the secondary fire groups
+- `Down` -- This will load the next ammunition (missiles) type
 
-I've attempted to create a configuration that should feel natural to anyone who plays FPS games with game console controllers.
+#### Trigger
 
-If you click the `A1 HAT` switch on both the left and right controllers it will put these two sticks into analog mode.  The small red led indicator light should be turned on.  I've configured movement and your head movement on these two sticks to be the same as you would find in just about any First Person Shooter using an X-Box or PlayStation controller.  If you regularly play these types of games using a controller, then using your thumbs on these two sticks should feel pretty natural.
+This is the secondary fire button.  Use this for firing your secondary weapons, and hold when in long range scan mode to charge up the scan ping.  When walking, pull the trigger once to start running.
 
-Feel free to invert axis and tweak sensitivity to your liking.  Just be aware that if you ever download an updated version of my configs to use, you'll have to reconfigure those to your preferences.
+#### D1 Button
 
-The `A2` button on the right stick is mapped to interact.  Consider this your replacement for your regular mouse click.  Use this to talk to people, use elevators, and just about anywhere that you'd reach over to your mouse to click.
+This button will pause the game.
 
-The `B1` button can be used to back out of menus.  Consider it the same a the `ESC`.
+#### F Buttons
 
-Using the `C1 Hat` directions, you should be able to successfully walk up to the trade desk at any station, ask to see wares, buy and sell something, and then leave all without ever having to move your hands to your mouse.
+- `F2` -- This will cycle through the radar modes
+- `F1` -- This will toggle the slow time game option (see the accessibility options for more)
+- `F3` -- Quick Save -- USE FREQUENTLY!
 
-#### Map
+#### Sw1
 
-I've decided that trying to make an optimal map configuration is just not something I am interested in.  I use the mouse for the map because it is just way more natural.
+This switch will zoom in and out with the Video Enhancement Goggles
 
-#### Flight
+#### Left Stick Diagram
 
-##### Movement Basics
+!["Left Hand Stick Diagram"](img/left.png)
 
-The right hand stick is used for flight.  The Y axis is mapped to pitch, the X axis is mapped to roll, and the Z rotation on the handle is mapped to yaw.  This should be standard for most flight simulations.  
+### Right Hand
 
-The left hand stick is used for throttle and strafing.  I've removed the Y axis spring so that the dry clutch converts this axis into a throttle.  
+The right hand stick has a few more things going on.  The primary difference is that there are multiple modes that the A3 HAT can be in.  Each mode tries to group similar function together.
 
-Y axis is throttle positive and negative.  The RGB leg will flash red in the zero position to indicate you've stopped.  Solid green indicates you are under thrust.
+Starting left to right as if we are looking at the stick.
 
-X axis will do left/right strafing.  The Z handle rotation for up/down.
+#### A1 HAT
 
-On the left hand stick `A2` is configured as a Tempo button.  Short press will turn off engines (full stop) and long press engages the boost.
+Press in on this hat to enable view mode similar to using a controller in FPS mode.  I personally don't use this much.  I tend to move my hand over to my mouse when walking around.
 
-On the left hand stick `C1 Hat Press` will toggle Flight Assist.  Use this to pull sick drifts in travel drive mode.
+#### A3 HAT
 
-##### Ship Modes
+Press the center of the A3 HAT to cycle between the three modes.
 
-Use the `C1 Hat` directions to toggle the various ship modes.  
+The LED on the stick will light up according to which mode you are in.
 
-- `Left` -- Travel Drive
-- `Up` -- Scan Mode
-- `Down` -- Long Range Scan Mode
-- `Right` -- Seta
+- `Mode 1` -- Blue LED
+- `Mode 2` -- Green LED
+- `Mode 3` -- Red LED
 
-Note: In the Omni Throttle angled configuration this actually places the `Left` direction in much more of an `Up` direction and this makes it very easy to use your thumb to switch into this mode.  Travel is my most common mode and I suspect it is yours as well.
+##### Mode 1 BLUE
 
-- `C1 Hat Press` toggles flight assist.
-- Left hand `Main Trigger` hold and release while in Long Range Scan mode to send out a ping.
-- Right hand `B1` short press triggers Ship Scan.
+This is the default mode and is for basic commands.
 
-##### Targeting
+- `Press` -- Toggle modes
+- `Up` -- Stand Up
+- `Left` -- Request Docking while flying and Fast Travel when walking
 
-The left hand `A4 Hat` directions perform the following targeting options.
+##### Mode 2 Green
 
-- `Up` -- Target object
-- `Down` -- Target nearest enemy
-- `Left` -- Engage Autopilot
-- `Right` -- Set Guidance
-- `Press` -- Deselect Target
+This mode is focused around civilian deployment commands.
 
-Note: In the Omni Throttle configuration `Left` is in more of an `Up` direction.  
+- `Press` -- Toggle modes
+- `Up` -- Launch a resource probe
+- `Down` -- Repeat the last civilian deployment
+- `Left` -- Launch Navigation Beacon
+- `Right` -- Launch Satellite
 
-With this configuration you could be able to `Up` to target a station or ship, `Right` to set guidance to it (the Yellow highlight box) and then `Left` to trigger auto-pilot to take you there.
+##### Mode 3 Red
 
-##### Combat
+This mode is focused around combat commands.
 
-Note: I haven't been able to figure out a way to configure the Fire Button 2 to anything within the X4 ui.  So for now I have them unmapped.  I'm still trying to figure out where they'd be useful as well.  Right now the only good idea I have is triggering space suit bombs, but even then I'm not sure.
+- `Press` -- Toggle modes
+- `Up` -- Short press to have you wingman attack your target, long press to have them resume their duties
+- `Down` -- Short press to launch a laser tower, long press to launch a mine
+- `Left` -- Toggles Drones
+- `Right` -- Toggles Turrets
 
-The main trigger buttons for both sticks are mapped to Primary and Secondary fire.  Right hand is primary, and left hand is secondary.  While in long range scan mode, the left hand trigger performs the release and hold ping.
+#### A4 HAT
 
-On the right hand and left hand sticks, rapid fire `Up` will cycle through the associated primary and secondary weapon groups.  
+This HAT is camera controls.  Use it in external view modes.  Press in on the stick to reset the camera to default view.
 
-On the right hand stick, rapid fire `Down` will release countermeasures.
+#### A2 Button
 
-On the left hand stick, rapid fire `Down` will load the next missile type.  
+`Hold` for the container magnet.
 
-After combat, long pressing the `B1` Tempo button engages the container magnet.
+#### B1 Button
 
-##### Right Hand A3 Modes
+In short range scan mode, scan your target.
 
-I decided to use the right hand `A3 Hat` for 3 separate modes focused around deployables and commands in different situations.  Center clicking the `A3 Hat` will cycle between modes 00 -> 01 -> 02.
+Note: There is another long press button mapped in the controller config, but is currently not mapped to anything in the game.
 
-To help you I've configured each mode to display a different color.  Mode 00 is blue, 01 is green, and 02 is red.
+#### C1 HAT
 
-Mode 00 General
+This HAT is for UI interaction.  Press the HAT to select menu items.  Use the directions to move around.  Pressing the HAT will also answer comms requests.
 
-- `Left` -- Request Docking / Undocking
-- `Up` -- Get Up
-- `Down` -- Wingman resume duties
+There are one or two menu items that don't want to seem to have their OK button triggered, but I can't figure out why.  You may run into this.
 
-Mode 01 is green and focused on civilian deployables.  
+#### Rapid Fire
 
-- `Left` -- Navigation Beacon
-- `Up` -- Resource Probe
-- `Right` -- Satellite
-- `Down` -- Repeat last civilian deployment
+- `Up`-- Next Primary Fire Group
+- `Down` -- Launch Counter Measures
 
-Mode 02 is red and focused on combat orders and deployables.
+#### Trigger
 
-- `Left` -- Toggle Drone Deployment
-- `Up` -- Wingman attack target
-- `Right` -- Toggle Turret Arming
-- `Down` `Short` -- Deploy Laser Tower
-- `Down` `Long` -- Deploy Mine
+> __Pew! Pew!__ -- Boso Ta
 
-`Down` is a tempo button in Mode 02.  A short press will drop a laser tower and a long press will drop a mine.
 
-I tend to toggle turrets a lot when I'm in M sized ships when I'm close to NPC stations or larger ships to help prevent splash damage and reputation loss.
+#### D1 Button
+
+Once you have teleportation unlocked, this will teleport you to your current target (provided you have permission).
+
+#### F Buttons
+
+- `F2` -- Short press for external view.  Long press for Target view.  Short press again to return to cockpit view.
+- `F1` -- Comm your target
+- `F3` -- If your ship is equipped with a cover mod, this will toggle it
+
+#### En1
+
+(It says En2 in the diagram for some reason)
+
+This controls the camera zoom level when in external or target view.
+
+#### Right Stick Diagrams
+
+Mode 1
+
+!["Right Hand Stick Diagram Mode 1"](img/right_mode_1.png)
+
+Mode 2
+
+!["Right Hand Stick Diagram Mode 2"](img/right_mode_2.png)
+
+Mode 3
+
+!["Right Hand Stick Diagram Mode 3"](img/right_mode_3.png)
 
 ## Changelog
 
+- 2025.06.21 -- Updated for 7.6
+  - __UPDATE__ Capture tweaks from the last year
+  - __NEW__ -- VKB Diagrams
+  - __CHANGE__ -- Overhaul README
 - 2024.07.09 -- And they call it a mine!
   - `[VKB] [FS]` Added a boolean for virtual button 53 so that it is now a tempo button in Shift Mode 2 (combat)
   - `[X4] [FS]` Added short down press in combat mode to deploy laser tower
